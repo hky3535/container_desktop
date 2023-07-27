@@ -6,6 +6,6 @@ echo "keyboard-configuration keyboard-configuration/layout select English (US)" 
 apt update && apt install -y $(cat requirements.apt)
 # 启动vncserver
 mkdir /root/.vnc && echo "password" | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd
-USER=root vncserver :5 -geometry 1280x800 -depth 24
+USER=root vncserver :5 -geometry 1920x1080 -depth 24
 # 启动noVNC映射到https网页
 websockify --web=/usr/share/novnc/ --ssl-only --cert=ssl/cert.pem --key=ssl/key.pem 30000 localhost:5905
