@@ -1,8 +1,0 @@
-#!/bin/sh
-unset SESSION_MANAGER
-echo "password" | vncpasswd -f > ~/.vnc/passwd
-xrdb $HOME/.Xresources
-vncconfig -iconic &
-xsetroot -solid grey
-xterm -geometry 80x24+10+10 -ls -title "$VNCDESKTOP Desktop" &
-twm &
