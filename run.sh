@@ -3,6 +3,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo "tzdata tzdata/Areas select Asia" | debconf-set-selections
 echo "tzdata tzdata/Zones/Asia select Shanghai" | debconf-set-selections
 echo "keyboard-configuration keyboard-configuration/layout select English (US)" | debconf-set-selections
+unminimize
 apt update && apt install -y $(cat requirements.apt)
 # 启动vncserver
 mkdir /root/.vnc && echo "password" | vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd
